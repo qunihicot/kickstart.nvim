@@ -119,6 +119,13 @@ vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
 -- Enable break indent
 vim.o.breakindent = true
 
+-- Tabs and Indention
+-- https://neovim.io/doc/user/usr_30.html#30.5
+vim.o.expandtab = true -- To insert a real tab, use <C-v><Tab>
+vim.o.shiftwidth = 4
+vim.o.smarttab = false
+vim.o.softtabstop = -1 -- A negative value makes Vim use 'shiftwidth'
+
 -- Save undo history
 vim.o.undofile = true
 
