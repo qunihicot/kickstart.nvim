@@ -237,6 +237,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function() vim.hl.on_yank() end,
 })
 
+-- Deactivate IME when turning into normal mode
+if vim.fn.has 'unix' == 1 then
+  vim.api.nvim_create_autocmd({ 'InsertLeave' }, {
+    pattern = '*',
+    callback = function() os.execute 'fcitx5-remote -c' end,
+  })
+end
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
