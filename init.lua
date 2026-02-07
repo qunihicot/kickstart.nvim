@@ -102,7 +102,7 @@ vim.g.have_nerd_font = false
 vim.o.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.o.relativenumber = true
+vim.o.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
@@ -489,7 +489,7 @@ require('lazy').setup({
       -- Allows extra capabilities provided by blink.cmp
       'saghen/blink.cmp',
 
-      { "meson-org/mason-lspconfig.nvim", opts = {} },
+      { 'mason-org/mason-lspconfig.nvim', opts = {} },
     },
     config = function()
       -- Brief aside: **What is LSP?**
@@ -862,6 +862,8 @@ require('lazy').setup({
       })
     end,
   },
+
+  require 'custom.plugins.obsidian-bridge',
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
